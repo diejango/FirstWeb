@@ -1,0 +1,13 @@
+<h1>list of abilities</h1>
+<form method="GET">{%csrf_token%}
+    <input type = 'text' id = 'kword' name="kword" placeholder="ingrese el nombre aqui">
+    <button type="submit">BUSCAR</button>
+</form>
+
+<ul>
+    
+    {% for i in habilidades %}
+        <li>{{i}}</li>
+    {% endfor %}
+        
+</ul>

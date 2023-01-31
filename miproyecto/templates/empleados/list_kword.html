@@ -1,0 +1,14 @@
+<h1>list by kword</h1>
+<form method="GET">{%csrf_token%}
+    <input type = 'text' id = 'kword' name="kword" placeholder="ingrese el nombre aqui">
+    <button type="submit">BUSCAR</button>
+</form>
+
+<h3>lista resultados</h3>
+<ul>
+    
+    {% for i in empleados %}
+        <li>{{i}}</li>
+    {% endfor %}
+        
+</ul>

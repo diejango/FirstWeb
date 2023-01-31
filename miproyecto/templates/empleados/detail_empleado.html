@@ -1,0 +1,49 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block title%} {{object.full_name}} {%endblock title%}
+{%block content%}
+{%include 'includes/header.html'%}
+
+<div class="grid-container">
+    <div class="grid-x grid-margin-x align-center" >
+        <div class="card cell large-8" style="width: 300px; margin-top: 10px;">
+            <div class="card-divider">
+              <h2>{{object.full_name}}</h2>
+            </div>
+            
+            {% if object.image %}
+                <img src="{{object.image.url}}">
+            {% else %}
+                <img src="{% static 'img/default.jpeg' %}" >
+            {% endif %}
+
+            <div class="card-section">
+                <h4>{{object.get_job_display}}</h4>
+                <p>{{object.departamento.name}}</p>
+                <p><span class="label">Habilidades:</span></p>
+                <ul class="vertical menu">
+                
+                {% for h in object.abilities.all %}
+                    <li>{{h.abilitie}}</li>
+                {% endfor %}
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock content%}
+
+
+
+
+
+    <h1>Detalle de un empleado  {{nombre}}</h1>
+    <h3>{{object}}</h3>
+    <h4>Detalles :</h4>
+    <p>{{object.first_name}}</p>
+    <p>{{object.last_name}}</p>
+    <p>{{object.job}}</p>
+    <p>{{object.departamento}}</p>
+    <p>{{object.abilities}}</p>

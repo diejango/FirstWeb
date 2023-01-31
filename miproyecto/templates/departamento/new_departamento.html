@@ -1,0 +1,46 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block title%}Agregar Departamento{%endblock title%}
+{%block content%}
+{%include 'includes/header.html'%}
+<div class="grid-container">
+    <div class="grid-x">
+        <h1 class="cell"> Registrar Departamento</h1>
+        <form class="cell callout grid-x grid-margin-x" method="post" encytipe="multipart/form-data">{%csrf_token%}
+            <h2 class="cell">Datos Administrador</h2>
+            <div class="large-6 cell">
+                <label>Nombres: 
+                    {{form.nombre}} 
+                </label>
+            </div>
+            <div class="large-6 cell">
+                <label>Apellidos: 
+                    {{form.apellido}} 
+                </label>
+            </div>
+            <h2 class="cell">Datos del Departamento</h2>
+            <div class="large-6 cell">
+                <label>Departamento: 
+                    {{form.departamento}} 
+                </label>
+            </div>
+            <div class="large-6 cell">
+                <label>short name: 
+                    {{form.shortname}} 
+                </label>
+            <div class="cell">
+                <button class="submit success button">Guardar</button>
+                </label>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+{%endblock content%}
+
+
+
+
+
